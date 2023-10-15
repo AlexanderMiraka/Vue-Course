@@ -1,10 +1,24 @@
 const app = Vue.createApp({
-    data: function() {
-        return {
-            courseGoal: 'Finish the course',
-            vueLink:'https://vuejs.org/'
-        };
-    }
+  data() {
+    return {
+      counter: 0,
+      name:'',
+    };
+  },
+  methods: {
+    setName: function(event) {//default param for functions
+        this.name = event.target.value;
+    },
+    submitForm: function() {
+        console.log('kjgn');
+    },
+    add: function (num) {
+        this.counter += num;
+    },
+    remove: function (num) {
+        this.counter -= num;
+    },
+  },
 });
 
-app.mount('#user-goal');//connect the created Vue App to the specific html section
+app.mount('#events');
