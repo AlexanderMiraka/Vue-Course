@@ -45,3 +45,33 @@ const app = Vue.createApp({
 });
 
 app.mount('#events');
+
+const app1 = Vue.createApp({
+  data() {
+    return {
+      boxASelected:false,
+      boxBSelected:false,
+      boxCSelected:false,
+    }
+  },
+  methods: {
+    boxSelected(box) {
+      if(box=== 'A') {
+        boxASelected = !this.boxASelected;
+      }
+      else if (box === 'B') {
+        boxBSelected = !this.boxBSelected;
+      } 
+      else {
+        boxCSelected = !this.boxCSelected;
+      }
+    }
+  },
+  computed : {
+    boxAClasses () {
+      return {active: this.boxASelected};
+    }
+  }
+});
+
+app1.mount('#styling');
